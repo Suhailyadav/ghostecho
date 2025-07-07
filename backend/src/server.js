@@ -21,8 +21,15 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data
 
 // Routes
 import authRoutes from './routes/auth.routes.js';
+import messageRoutes from './routes/message.routes.js'
+import userRoutes from './routes/user.routes.js'
+// import mediaRoutes from './routes/media.routes.js'
 
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/messages', messageRoutes)
+// app.use('/api/v1/media', mediaRoutes);
+app.use('/api/v1/users', userRoutes);
+
 
 app.use(errorHandler);
 
